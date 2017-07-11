@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "BCTNavigationVC.h"
+#import "BCTMainVC.h"
+#import "BCTMacros.h"
+#import "BCTVCManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:kBCTScreenBounds];
+    
+    BCTMainVC* mainVC = [[BCTMainVC alloc] init];
+        
+    BCTNavigationVC* navVC = [[BCTNavigationVC alloc] initWithRootViewController:mainVC];
+        
+    self.window.rootViewController = navVC;
+    
+    [BCTVCManager sharedManager].navigationVC = navVC;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

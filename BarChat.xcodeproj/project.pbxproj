@@ -7,14 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E26E4E47FB3C243D1B39F59 /* libPods-BarChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C175D403BAA4D534BA1A60B /* libPods-BarChat.a */; };
+		6E348BB61F14653E00F66E44 /* BCTDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E348BB51F14653E00F66E44 /* BCTDateManager.m */; };
+		6E348BB91F1474C800F66E44 /* BCTChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E348BB81F1474C800F66E44 /* BCTChatCell.m */; };
 		6ECD856F1F133EFC00BFC6CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD856E1F133EFC00BFC6CC /* main.m */; };
 		6ECD85721F133EFC00BFC6CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85711F133EFC00BFC6CC /* AppDelegate.m */; };
-		6ECD85751F133EFC00BFC6CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85741F133EFC00BFC6CC /* ViewController.m */; };
-		6ECD85781F133EFC00BFC6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD85761F133EFC00BFC6CC /* Main.storyboard */; };
 		6ECD857A1F133EFC00BFC6CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD85791F133EFC00BFC6CC /* Assets.xcassets */; };
 		6ECD857D1F133EFC00BFC6CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */; };
 		6ECD85881F133EFC00BFC6CC /* BarChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85871F133EFC00BFC6CC /* BarChatTests.m */; };
 		6ECD85931F133EFC00BFC6CC /* BarChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85921F133EFC00BFC6CC /* BarChatUITests.m */; };
+		6ECD85A51F138AED00BFC6CC /* BCTNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85A41F138AED00BFC6CC /* BCTNavigationVC.m */; };
+		6ECD85A81F138B5100BFC6CC /* BCTMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85A71F138B5100BFC6CC /* BCTMainVC.m */; };
+		6ECD85AC1F138D6600BFC6CC /* BCTIOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85AB1F138D6600BFC6CC /* BCTIOManager.m */; };
+		6ECD85AF1F138D7100BFC6CC /* BCTSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85AE1F138D7100BFC6CC /* BCTSocketManager.m */; };
+		6ECD85B21F138D7C00BFC6CC /* BCTDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85B11F138D7C00BFC6CC /* BCTDatabaseManager.m */; };
+		6ECD85B51F138D9000BFC6CC /* BCTVCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85B41F138D9000BFC6CC /* BCTVCManager.m */; };
+		6ECD85B81F138DA700BFC6CC /* BCTChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85B71F138DA700BFC6CC /* BCTChatVC.m */; };
+		6ECD85BB1F138DBD00BFC6CC /* BCTUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85BA1F138DBD00BFC6CC /* BCTUserInfoVC.m */; };
+		6ECD85BE1F138DDE00BFC6CC /* BCTNewFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85BD1F138DDE00BFC6CC /* BCTNewFriendVC.m */; };
+		6ECD85C11F138DED00BFC6CC /* BCTMomentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85C01F138DED00BFC6CC /* BCTMomentsVC.m */; };
+		6ECD85C41F138DFD00BFC6CC /* BCTSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85C31F138DFD00BFC6CC /* BCTSettingsVC.m */; };
+		6ECD85C71F139E5800BFC6CC /* BCTMainBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85C61F139E5800BFC6CC /* BCTMainBottomBar.m */; };
+		6ECD85CB1F13B78600BFC6CC /* BCTChatListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85CA1F13B78600BFC6CC /* BCTChatListVC.m */; };
+		6ECD85CE1F13B79300BFC6CC /* BCTFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85CD1F13B79300BFC6CC /* BCTFriendsVC.m */; };
+		6ECD85D11F13B7A000BFC6CC /* BCTDiscoveryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85D01F13B7A000BFC6CC /* BCTDiscoveryVC.m */; };
+		6ECD85D41F13B7AC00BFC6CC /* BCTMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85D31F13B7AC00BFC6CC /* BCTMeVC.m */; };
+		6ECD85D81F13B96800BFC6CC /* BCTChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85D71F13B96800BFC6CC /* BCTChatListCell.m */; };
+		6ECD85DB1F13B97500BFC6CC /* BCTFriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85DA1F13B97500BFC6CC /* BCTFriendsCell.m */; };
+		6ECD85DE1F13B98100BFC6CC /* BCTDiscoveryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85DD1F13B98100BFC6CC /* BCTDiscoveryCell.m */; };
+		6ECD85E11F13B98C00BFC6CC /* BCTMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85E01F13B98C00BFC6CC /* BCTMeCell.m */; };
+		6ECD85E41F13BD9700BFC6CC /* BCTUserIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85E31F13BD9700BFC6CC /* BCTUserIcon.m */; };
+		6ECD85E61F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD85E51F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png */; };
+		6ECD85E91F13C4D600BFC6CC /* BCTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85E81F13C4D600BFC6CC /* BCTMessage.m */; };
+		6ECD85EB1F13DC1F00BFC6CC /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECD85EA1F13DC1F00BFC6CC /* libsqlite3.0.tbd */; };
+		AECD7FD417AD877FCA93BABC /* libPods-BarChatUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A85BE65DFFC22218E6CE502 /* libPods-BarChatUITests.a */; };
+		FD4FED6B57838789280FED49 /* libPods-BarChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE283A2C4F759EFCD917B70 /* libPods-BarChatTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +62,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01DAA95EC32019EA175BCF92 /* Pods-BarChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarChatTests/Pods-BarChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		331BDF4E3DCF1B7D471BFBDA /* Pods-BarChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarChatUITests/Pods-BarChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BBCF734BFF1B7B6740E8A43 /* Pods-BarChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarChat/Pods-BarChat.debug.xcconfig"; sourceTree = "<group>"; };
+		4BE283A2C4F759EFCD917B70 /* libPods-BarChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E8EE3EA0ED8425B43E6891C /* Pods-BarChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarChatTests/Pods-BarChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		6A85BE65DFFC22218E6CE502 /* libPods-BarChatUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarChatUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E348BB41F14653E00F66E44 /* BCTDateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTDateManager.h; sourceTree = "<group>"; };
+		6E348BB51F14653E00F66E44 /* BCTDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTDateManager.m; sourceTree = "<group>"; };
+		6E348BB71F1474C800F66E44 /* BCTChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTChatCell.h; sourceTree = "<group>"; };
+		6E348BB81F1474C800F66E44 /* BCTChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTChatCell.m; sourceTree = "<group>"; };
 		6ECD856A1F133EFC00BFC6CC /* BarChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECD856E1F133EFC00BFC6CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ECD85701F133EFC00BFC6CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6ECD85711F133EFC00BFC6CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6ECD85731F133EFC00BFC6CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6ECD85741F133EFC00BFC6CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6ECD85771F133EFC00BFC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6ECD85791F133EFC00BFC6CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ECD857C1F133EFC00BFC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ECD857E1F133EFC00BFC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +85,56 @@
 		6ECD858E1F133EFC00BFC6CC /* BarChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECD85921F133EFC00BFC6CC /* BarChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChatUITests.m; sourceTree = "<group>"; };
 		6ECD85941F133EFC00BFC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ECD85A31F138AED00BFC6CC /* BCTNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTNavigationVC.h; sourceTree = "<group>"; };
+		6ECD85A41F138AED00BFC6CC /* BCTNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTNavigationVC.m; sourceTree = "<group>"; };
+		6ECD85A61F138B5100BFC6CC /* BCTMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMainVC.h; sourceTree = "<group>"; };
+		6ECD85A71F138B5100BFC6CC /* BCTMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMainVC.m; sourceTree = "<group>"; };
+		6ECD85A91F138B7A00BFC6CC /* BCTMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCTMacros.h; sourceTree = "<group>"; };
+		6ECD85AA1F138D6600BFC6CC /* BCTIOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTIOManager.h; sourceTree = "<group>"; };
+		6ECD85AB1F138D6600BFC6CC /* BCTIOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTIOManager.m; sourceTree = "<group>"; };
+		6ECD85AD1F138D7100BFC6CC /* BCTSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTSocketManager.h; sourceTree = "<group>"; };
+		6ECD85AE1F138D7100BFC6CC /* BCTSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTSocketManager.m; sourceTree = "<group>"; };
+		6ECD85B01F138D7C00BFC6CC /* BCTDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTDatabaseManager.h; sourceTree = "<group>"; };
+		6ECD85B11F138D7C00BFC6CC /* BCTDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTDatabaseManager.m; sourceTree = "<group>"; };
+		6ECD85B31F138D9000BFC6CC /* BCTVCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTVCManager.h; sourceTree = "<group>"; };
+		6ECD85B41F138D9000BFC6CC /* BCTVCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTVCManager.m; sourceTree = "<group>"; };
+		6ECD85B61F138DA700BFC6CC /* BCTChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTChatVC.h; sourceTree = "<group>"; };
+		6ECD85B71F138DA700BFC6CC /* BCTChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTChatVC.m; sourceTree = "<group>"; };
+		6ECD85B91F138DBD00BFC6CC /* BCTUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTUserInfoVC.h; sourceTree = "<group>"; };
+		6ECD85BA1F138DBD00BFC6CC /* BCTUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTUserInfoVC.m; sourceTree = "<group>"; };
+		6ECD85BC1F138DDE00BFC6CC /* BCTNewFriendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTNewFriendVC.h; sourceTree = "<group>"; };
+		6ECD85BD1F138DDE00BFC6CC /* BCTNewFriendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTNewFriendVC.m; sourceTree = "<group>"; };
+		6ECD85BF1F138DED00BFC6CC /* BCTMomentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMomentsVC.h; sourceTree = "<group>"; };
+		6ECD85C01F138DED00BFC6CC /* BCTMomentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMomentsVC.m; sourceTree = "<group>"; };
+		6ECD85C21F138DFD00BFC6CC /* BCTSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTSettingsVC.h; sourceTree = "<group>"; };
+		6ECD85C31F138DFD00BFC6CC /* BCTSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTSettingsVC.m; sourceTree = "<group>"; };
+		6ECD85C51F139E5800BFC6CC /* BCTMainBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMainBottomBar.h; sourceTree = "<group>"; };
+		6ECD85C61F139E5800BFC6CC /* BCTMainBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMainBottomBar.m; sourceTree = "<group>"; };
+		6ECD85C91F13B78600BFC6CC /* BCTChatListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTChatListVC.h; sourceTree = "<group>"; };
+		6ECD85CA1F13B78600BFC6CC /* BCTChatListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTChatListVC.m; sourceTree = "<group>"; };
+		6ECD85CC1F13B79300BFC6CC /* BCTFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTFriendsVC.h; sourceTree = "<group>"; };
+		6ECD85CD1F13B79300BFC6CC /* BCTFriendsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTFriendsVC.m; sourceTree = "<group>"; };
+		6ECD85CF1F13B7A000BFC6CC /* BCTDiscoveryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTDiscoveryVC.h; sourceTree = "<group>"; };
+		6ECD85D01F13B7A000BFC6CC /* BCTDiscoveryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTDiscoveryVC.m; sourceTree = "<group>"; };
+		6ECD85D21F13B7AC00BFC6CC /* BCTMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMeVC.h; sourceTree = "<group>"; };
+		6ECD85D31F13B7AC00BFC6CC /* BCTMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMeVC.m; sourceTree = "<group>"; };
+		6ECD85D61F13B96800BFC6CC /* BCTChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTChatListCell.h; sourceTree = "<group>"; };
+		6ECD85D71F13B96800BFC6CC /* BCTChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTChatListCell.m; sourceTree = "<group>"; };
+		6ECD85D91F13B97500BFC6CC /* BCTFriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTFriendsCell.h; sourceTree = "<group>"; };
+		6ECD85DA1F13B97500BFC6CC /* BCTFriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTFriendsCell.m; sourceTree = "<group>"; };
+		6ECD85DC1F13B98100BFC6CC /* BCTDiscoveryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTDiscoveryCell.h; sourceTree = "<group>"; };
+		6ECD85DD1F13B98100BFC6CC /* BCTDiscoveryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTDiscoveryCell.m; sourceTree = "<group>"; };
+		6ECD85DF1F13B98C00BFC6CC /* BCTMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMeCell.h; sourceTree = "<group>"; };
+		6ECD85E01F13B98C00BFC6CC /* BCTMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMeCell.m; sourceTree = "<group>"; };
+		6ECD85E21F13BD9700BFC6CC /* BCTUserIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTUserIcon.h; sourceTree = "<group>"; };
+		6ECD85E31F13BD9700BFC6CC /* BCTUserIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTUserIcon.m; sourceTree = "<group>"; };
+		6ECD85E51F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BCT_User_Icon_Demo@2x.png"; sourceTree = "<group>"; };
+		6ECD85E71F13C4D600BFC6CC /* BCTMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTMessage.h; sourceTree = "<group>"; };
+		6ECD85E81F13C4D600BFC6CC /* BCTMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTMessage.m; sourceTree = "<group>"; };
+		6ECD85EA1F13DC1F00BFC6CC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		8C175D403BAA4D534BA1A60B /* libPods-BarChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B98BC6E66CF71F40A01618EF /* Pods-BarChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarChatUITests/Pods-BarChatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB6181C0782BF34BF6A2EEEC /* Pods-BarChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarChat/Pods-BarChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECD85EB1F13DC1F00BFC6CC /* libsqlite3.0.tbd in Frameworks */,
+				3E26E4E47FB3C243D1B39F59 /* libPods-BarChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4FED6B57838789280FED49 /* libPods-BarChatTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECD7FD417AD877FCA93BABC /* libPods-BarChatUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +173,8 @@
 				6ECD85861F133EFC00BFC6CC /* BarChatTests */,
 				6ECD85911F133EFC00BFC6CC /* BarChatUITests */,
 				6ECD856B1F133EFC00BFC6CC /* Products */,
+				EA5BB7FDFDF35483F2BFC5BE /* Pods */,
+				BA68E8138CA34F467DD23FEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,12 +193,16 @@
 			children = (
 				6ECD85701F133EFC00BFC6CC /* AppDelegate.h */,
 				6ECD85711F133EFC00BFC6CC /* AppDelegate.m */,
-				6ECD85731F133EFC00BFC6CC /* ViewController.h */,
-				6ECD85741F133EFC00BFC6CC /* ViewController.m */,
-				6ECD85761F133EFC00BFC6CC /* Main.storyboard */,
+				6ECD85A91F138B7A00BFC6CC /* BCTMacros.h */,
+				6ECD85A21F13898B00BFC6CC /* Main */,
+				6ECD85C81F13B6E900BFC6CC /* Models */,
+				6ECD85A11F13897700BFC6CC /* VCs */,
+				6ECD85A01F13896B00BFC6CC /* I/O */,
+				6ECD85D51F13B8E800BFC6CC /* Widgets */,
 				6ECD85791F133EFC00BFC6CC /* Assets.xcassets */,
 				6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */,
 				6ECD857E1F133EFC00BFC6CC /* Info.plist */,
+				6ECD85E51F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png */,
 				6ECD856D1F133EFC00BFC6CC /* Supporting Files */,
 			);
 			path = BarChat;
@@ -140,6 +234,113 @@
 			path = BarChatUITests;
 			sourceTree = "<group>";
 		};
+		6ECD85A01F13896B00BFC6CC /* I/O */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85AA1F138D6600BFC6CC /* BCTIOManager.h */,
+				6ECD85AB1F138D6600BFC6CC /* BCTIOManager.m */,
+				6ECD85AD1F138D7100BFC6CC /* BCTSocketManager.h */,
+				6ECD85AE1F138D7100BFC6CC /* BCTSocketManager.m */,
+				6ECD85B01F138D7C00BFC6CC /* BCTDatabaseManager.h */,
+				6ECD85B11F138D7C00BFC6CC /* BCTDatabaseManager.m */,
+			);
+			name = I/O;
+			sourceTree = "<group>";
+		};
+		6ECD85A11F13897700BFC6CC /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85B31F138D9000BFC6CC /* BCTVCManager.h */,
+				6ECD85B41F138D9000BFC6CC /* BCTVCManager.m */,
+				6ECD85B61F138DA700BFC6CC /* BCTChatVC.h */,
+				6ECD85B71F138DA700BFC6CC /* BCTChatVC.m */,
+				6E348BB71F1474C800F66E44 /* BCTChatCell.h */,
+				6E348BB81F1474C800F66E44 /* BCTChatCell.m */,
+				6ECD85B91F138DBD00BFC6CC /* BCTUserInfoVC.h */,
+				6ECD85BA1F138DBD00BFC6CC /* BCTUserInfoVC.m */,
+				6ECD85BC1F138DDE00BFC6CC /* BCTNewFriendVC.h */,
+				6ECD85BD1F138DDE00BFC6CC /* BCTNewFriendVC.m */,
+				6ECD85BF1F138DED00BFC6CC /* BCTMomentsVC.h */,
+				6ECD85C01F138DED00BFC6CC /* BCTMomentsVC.m */,
+				6ECD85C21F138DFD00BFC6CC /* BCTSettingsVC.h */,
+				6ECD85C31F138DFD00BFC6CC /* BCTSettingsVC.m */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		6ECD85A21F13898B00BFC6CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85A31F138AED00BFC6CC /* BCTNavigationVC.h */,
+				6ECD85A41F138AED00BFC6CC /* BCTNavigationVC.m */,
+				6ECD85A61F138B5100BFC6CC /* BCTMainVC.h */,
+				6ECD85A71F138B5100BFC6CC /* BCTMainVC.m */,
+				6ECD85C51F139E5800BFC6CC /* BCTMainBottomBar.h */,
+				6ECD85C61F139E5800BFC6CC /* BCTMainBottomBar.m */,
+				6ECD85C91F13B78600BFC6CC /* BCTChatListVC.h */,
+				6ECD85CA1F13B78600BFC6CC /* BCTChatListVC.m */,
+				6ECD85D61F13B96800BFC6CC /* BCTChatListCell.h */,
+				6ECD85D71F13B96800BFC6CC /* BCTChatListCell.m */,
+				6ECD85CC1F13B79300BFC6CC /* BCTFriendsVC.h */,
+				6ECD85CD1F13B79300BFC6CC /* BCTFriendsVC.m */,
+				6ECD85D91F13B97500BFC6CC /* BCTFriendsCell.h */,
+				6ECD85DA1F13B97500BFC6CC /* BCTFriendsCell.m */,
+				6ECD85CF1F13B7A000BFC6CC /* BCTDiscoveryVC.h */,
+				6ECD85D01F13B7A000BFC6CC /* BCTDiscoveryVC.m */,
+				6ECD85DC1F13B98100BFC6CC /* BCTDiscoveryCell.h */,
+				6ECD85DD1F13B98100BFC6CC /* BCTDiscoveryCell.m */,
+				6ECD85D21F13B7AC00BFC6CC /* BCTMeVC.h */,
+				6ECD85D31F13B7AC00BFC6CC /* BCTMeVC.m */,
+				6ECD85DF1F13B98C00BFC6CC /* BCTMeCell.h */,
+				6ECD85E01F13B98C00BFC6CC /* BCTMeCell.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6ECD85C81F13B6E900BFC6CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85E71F13C4D600BFC6CC /* BCTMessage.h */,
+				6ECD85E81F13C4D600BFC6CC /* BCTMessage.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6ECD85D51F13B8E800BFC6CC /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85E21F13BD9700BFC6CC /* BCTUserIcon.h */,
+				6ECD85E31F13BD9700BFC6CC /* BCTUserIcon.m */,
+				6E348BB41F14653E00F66E44 /* BCTDateManager.h */,
+				6E348BB51F14653E00F66E44 /* BCTDateManager.m */,
+			);
+			name = Widgets;
+			sourceTree = "<group>";
+		};
+		BA68E8138CA34F467DD23FEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD85EA1F13DC1F00BFC6CC /* libsqlite3.0.tbd */,
+				8C175D403BAA4D534BA1A60B /* libPods-BarChat.a */,
+				4BE283A2C4F759EFCD917B70 /* libPods-BarChatTests.a */,
+				6A85BE65DFFC22218E6CE502 /* libPods-BarChatUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA5BB7FDFDF35483F2BFC5BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BBCF734BFF1B7B6740E8A43 /* Pods-BarChat.debug.xcconfig */,
+				BB6181C0782BF34BF6A2EEEC /* Pods-BarChat.release.xcconfig */,
+				01DAA95EC32019EA175BCF92 /* Pods-BarChatTests.debug.xcconfig */,
+				5E8EE3EA0ED8425B43E6891C /* Pods-BarChatTests.release.xcconfig */,
+				331BDF4E3DCF1B7D471BFBDA /* Pods-BarChatUITests.debug.xcconfig */,
+				B98BC6E66CF71F40A01618EF /* Pods-BarChatUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +348,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ECD85971F133EFC00BFC6CC /* Build configuration list for PBXNativeTarget "BarChat" */;
 			buildPhases = (
+				E4BCBFAE14184FD8311CBBFC /* [CP] Check Pods Manifest.lock */,
 				6ECD85661F133EFC00BFC6CC /* Sources */,
 				6ECD85671F133EFC00BFC6CC /* Frameworks */,
 				6ECD85681F133EFC00BFC6CC /* Resources */,
+				7D14A36860F7A31D5C6CCCC8 /* [CP] Embed Pods Frameworks */,
+				5BA7086642962755988B3AFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +368,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ECD859A1F133EFC00BFC6CC /* Build configuration list for PBXNativeTarget "BarChatTests" */;
 			buildPhases = (
+				C8D3A00F5BC4870108C517B9 /* [CP] Check Pods Manifest.lock */,
 				6ECD857F1F133EFC00BFC6CC /* Sources */,
 				6ECD85801F133EFC00BFC6CC /* Frameworks */,
 				6ECD85811F133EFC00BFC6CC /* Resources */,
+				A2AD5B809A7FDC31DE8896BD /* [CP] Embed Pods Frameworks */,
+				BE67B1E185471E541A423CBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +389,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ECD859D1F133EFC00BFC6CC /* Build configuration list for PBXNativeTarget "BarChatUITests" */;
 			buildPhases = (
+				09E9B3CC8CC625FE5E25204A /* [CP] Check Pods Manifest.lock */,
 				6ECD858A1F133EFC00BFC6CC /* Sources */,
 				6ECD858B1F133EFC00BFC6CC /* Frameworks */,
 				6ECD858C1F133EFC00BFC6CC /* Resources */,
+				FFC8F700256596235241A46A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,9 +458,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECD85E61F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png in Resources */,
 				6ECD857D1F133EFC00BFC6CC /* LaunchScreen.storyboard in Resources */,
 				6ECD857A1F133EFC00BFC6CC /* Assets.xcassets in Resources */,
-				6ECD85781F133EFC00BFC6CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,14 +480,160 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09E9B3CC8CC625FE5E25204A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5BA7086642962755988B3AFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarChat/Pods-BarChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D14A36860F7A31D5C6CCCC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarChat/Pods-BarChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2AD5B809A7FDC31DE8896BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarChatTests/Pods-BarChatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE67B1E185471E541A423CBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarChatTests/Pods-BarChatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8D3A00F5BC4870108C517B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BCBFAE14184FD8311CBBFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FFC8F700256596235241A46A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarChatUITests/Pods-BarChatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6ECD85661F133EFC00BFC6CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ECD85751F133EFC00BFC6CC /* ViewController.m in Sources */,
+				6ECD85BE1F138DDE00BFC6CC /* BCTNewFriendVC.m in Sources */,
+				6ECD85E41F13BD9700BFC6CC /* BCTUserIcon.m in Sources */,
+				6ECD85AF1F138D7100BFC6CC /* BCTSocketManager.m in Sources */,
+				6ECD85C11F138DED00BFC6CC /* BCTMomentsVC.m in Sources */,
+				6ECD85DB1F13B97500BFC6CC /* BCTFriendsCell.m in Sources */,
+				6ECD85E91F13C4D600BFC6CC /* BCTMessage.m in Sources */,
 				6ECD85721F133EFC00BFC6CC /* AppDelegate.m in Sources */,
+				6ECD85DE1F13B98100BFC6CC /* BCTDiscoveryCell.m in Sources */,
+				6ECD85C41F138DFD00BFC6CC /* BCTSettingsVC.m in Sources */,
+				6E348BB91F1474C800F66E44 /* BCTChatCell.m in Sources */,
+				6ECD85B21F138D7C00BFC6CC /* BCTDatabaseManager.m in Sources */,
+				6ECD85CE1F13B79300BFC6CC /* BCTFriendsVC.m in Sources */,
+				6ECD85BB1F138DBD00BFC6CC /* BCTUserInfoVC.m in Sources */,
+				6ECD85A81F138B5100BFC6CC /* BCTMainVC.m in Sources */,
+				6ECD85CB1F13B78600BFC6CC /* BCTChatListVC.m in Sources */,
+				6ECD85A51F138AED00BFC6CC /* BCTNavigationVC.m in Sources */,
+				6ECD85D81F13B96800BFC6CC /* BCTChatListCell.m in Sources */,
+				6ECD85B81F138DA700BFC6CC /* BCTChatVC.m in Sources */,
+				6ECD85E11F13B98C00BFC6CC /* BCTMeCell.m in Sources */,
+				6ECD85AC1F138D6600BFC6CC /* BCTIOManager.m in Sources */,
+				6ECD85B51F138D9000BFC6CC /* BCTVCManager.m in Sources */,
+				6ECD85D41F13B7AC00BFC6CC /* BCTMeVC.m in Sources */,
 				6ECD856F1F133EFC00BFC6CC /* main.m in Sources */,
+				6E348BB61F14653E00F66E44 /* BCTDateManager.m in Sources */,
+				6ECD85D11F13B7A000BFC6CC /* BCTDiscoveryVC.m in Sources */,
+				6ECD85C71F139E5800BFC6CC /* BCTMainBottomBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +669,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6ECD85761F133EFC00BFC6CC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6ECD85771F133EFC00BFC6CC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -425,6 +772,7 @@
 		};
 		6ECD85981F133EFC00BFC6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BBCF734BFF1B7B6740E8A43 /* Pods-BarChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
@@ -437,6 +785,7 @@
 		};
 		6ECD85991F133EFC00BFC6CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB6181C0782BF34BF6A2EEEC /* Pods-BarChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
@@ -449,6 +798,7 @@
 		};
 		6ECD859B1F133EFC00BFC6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01DAA95EC32019EA175BCF92 /* Pods-BarChatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
@@ -462,6 +812,7 @@
 		};
 		6ECD859C1F133EFC00BFC6CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E8EE3EA0ED8425B43E6891C /* Pods-BarChatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
@@ -475,6 +826,7 @@
 		};
 		6ECD859E1F133EFC00BFC6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 331BDF4E3DCF1B7D471BFBDA /* Pods-BarChatUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
 				INFOPLIST_FILE = BarChatUITests/Info.plist;
@@ -487,6 +839,7 @@
 		};
 		6ECD859F1F133EFC00BFC6CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B98BC6E66CF71F40A01618EF /* Pods-BarChatUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
 				INFOPLIST_FILE = BarChatUITests/Info.plist;
@@ -516,6 +869,7 @@
 				6ECD85991F133EFC00BFC6CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6ECD859A1F133EFC00BFC6CC /* Build configuration list for PBXNativeTarget "BarChatTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +878,7 @@
 				6ECD859C1F133EFC00BFC6CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6ECD859D1F133EFC00BFC6CC /* Build configuration list for PBXNativeTarget "BarChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +887,7 @@
 				6ECD859F1F133EFC00BFC6CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

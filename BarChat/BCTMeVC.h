@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BCTMeVC.h
 //  BarChat
 //
 //  Created by Vince on 7/10/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BCTMeVC : UITableViewController
 
 @end
-
