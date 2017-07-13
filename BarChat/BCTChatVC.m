@@ -39,7 +39,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         
-        _chatTableView = [[UITableView alloc] initWithFrame:kBCTScreenBounds style:UITableViewStylePlain];
+        _chatTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kBCTScreenWidth, kBCTScreenHeight - kBCTNorm(50.f)) style:UITableViewStylePlain];
         _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _chatTableView.delegate = self;
         _chatTableView.dataSource = self;
@@ -68,8 +68,6 @@
     [self.view addGestureRecognizer:self.tapRecognizer];
     [self.inputBar addSubview:self.inputField];
     
-    self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f), 0);
-    
     self.messageTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f repeats:YES block:^(NSTimer* timer){
         if (self.messagesToDisplay.count != 0) {
             BCTMessage* message = [self.messagesToDisplay firstObject];
@@ -85,12 +83,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
+    self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f), 0);
+    
     [self refresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f), 0);
 //    [self fakeSomeMessages];
 }
 
@@ -164,7 +165,7 @@
     
     [UIView animateWithDuration:duration animations:^{
         self.inputBar.frame = finalFrame;
-        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f) + keyboardHeight, 0);
+        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f) + keyboardHeight, 0);
     } completion:^(BOOL finished){
         [self scrollToBottom];
     }];
@@ -175,7 +176,7 @@
     [UIView animateWithDuration:0.5f animations:^{
         
         self.inputBar.frame = _inputBarOriginalFrame;
-        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f), 0);
+        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f), 0);
         
     }];
 }

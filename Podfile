@@ -7,7 +7,7 @@ target 'BarChat' do
 
   # Pods for BarChat
   pod 'CocoaAsyncSocket', '~> 7.4.2'
-  pod 'Masonry', '~> 0.6.2'	
+  pod 'Masonry', '~> 0.6.2' 
   pod 'Reachability', '~> 3.2'
 
   target 'BarChatTests' do

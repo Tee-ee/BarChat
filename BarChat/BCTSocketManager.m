@@ -33,8 +33,8 @@
 }
 
 - (void)detectReachability {
-    GCDReachability* reach = [GCDReachability reachabilityWithHostname:@"www.appleiphonecell.com"];
-    reach.reachableBlock = ^(GCDReachability* reach)
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.appleiphonecell.com"];
+    reach.reachableBlock = ^(Reachability* reach)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"[SUCCEED] internet reachable");
@@ -42,7 +42,7 @@
         });
     };
     
-    reach.unreachableBlock = ^(GCDReachability* reach)
+    reach.unreachableBlock = ^(Reachability* reach)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"[FAILED] internet unreachable");
