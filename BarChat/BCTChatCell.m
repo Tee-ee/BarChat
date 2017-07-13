@@ -10,6 +10,7 @@
 #import "BCTMessage.h"
 #import "BCTUserIcon.h"
 #import "BCTMacros.h"
+#import "BCTChatVC.h"
 #import "BCTVCManager.h"
 
 #define MAS_SHORTHAND
@@ -49,7 +50,7 @@
         [_canvas addSubview:_messageBubble];
         
         [_messageBubble mas_makeConstraints:^(MASConstraintMaker* make){
-            make.bottom.equalTo(self.canvas);
+            make.bottom.equalTo(self.canvas).with.offset(kBCTNorm(-5.f));
             make.width.greaterThanOrEqualTo(kBCTNorm(50.f));
             make.width.lessThanOrEqualTo(kBCTNorm(175.f));
             make.height.greaterThanOrEqualTo(kBCTNorm(30.f));
@@ -73,29 +74,25 @@
 - (void)setMessage:(BCTMessage *)message {
     _message = message;
     
-    BOOL isMessageToMe = [message.to isEqualToString:[BCTVCManager sharedManager].userPhoneNumber];
+    [self.messageBubble setTitle:message.content forState:UIControlStateNormal];
     
-    if (isMessageToMe) {
-        self.userIcon.hidden = NO;
-        [self.messageBubble setBackgroundImage:[UIImage imageNamed:@"message_bubble_gray"] forState:UIControlStateNormal];
-        [self.messageBubble mas_updateConstraints:^(MASConstraintMaker* make){
-            make.left.equalTo(self.canvas).with.offset(kBCTNorm(10.f));
-        }];
-    }
-    else {
-        self.userIcon.hidden = YES;
-        [self.messageBubble setBackgroundImage:[UIImage imageNamed:@"message_bubble_green"] forState:UIControlStateNormal];
-        [self.messageBubble mas_updateConstraints:^(MASConstraintMaker* make){
-            make.right.equalTo(self.canvas).with.offset(kBCTNorm(-10.f));
-        }];
-    }
+    BOOL isMessageToMe = [message.from isEqualToString:self.fatherVC.peerPhoneNumber];
+    
+    self.messageBubble.contentEdgeInsets = UIEdgeInsetsMake(kBCTNorm(10.f), isMessageToMe?kBCTNorm(17.5f):kBCTNorm(12.5f), kBCTNorm(10.f), isMessageToMe?kBCTNorm(12.5f):kBCTNorm(17.5f));
+    self.userIcon.hidden = !isMessageToMe;
+    [self.messageBubble setBackgroundImage:[UIImage imageNamed:isMessageToMe? @"message_bubble_gray":@"message_bubble_green"] forState:UIControlStateNormal];
+    [self.messageBubble setTitleColor:isMessageToMe? [UIColor colorWithWhite:0.13 alpha:1.f]:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self layoutIfNeeded];
+    
+    [self.messageBubble mas_updateConstraints:^(MASConstraintMaker* make){
+        make.right.equalTo(self.canvas).with.offset(isMessageToMe? kBCTNorm(-260.f) + self.messageBubble.frame.size.width:kBCTNorm(-10.f));
+    }];
     
     CGFloat height = message.bubbleHeight;
     
     if (message.bubbleHeight == 0) {
-        height = _messageBubble.titleLabel.frame.size.height + kBCTNorm(20.f);
+        height = self.messageBubble.titleLabel.frame.size.height + kBCTNorm(20.f);
         message.bubbleHeight = height;
     }
     

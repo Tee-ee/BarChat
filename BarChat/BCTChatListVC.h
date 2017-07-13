@@ -10,4 +10,6 @@
 
 @interface BCTChatListVC : UITableViewController
 
+- (void)refresh;
+
 @end

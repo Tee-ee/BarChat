@@ -10,10 +10,14 @@
 		3E26E4E47FB3C243D1B39F59 /* libPods-BarChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C175D403BAA4D534BA1A60B /* libPods-BarChat.a */; };
 		6E348BB61F14653E00F66E44 /* BCTDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E348BB51F14653E00F66E44 /* BCTDateManager.m */; };
 		6E348BB91F1474C800F66E44 /* BCTChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E348BB81F1474C800F66E44 /* BCTChatCell.m */; };
+		6E6EE7521F14A90D0088EE24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6EE7511F14A90D0088EE24 /* SystemConfiguration.framework */; };
+		6E6EE7551F14BA370088EE24 /* BCTLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EE7541F14BA370088EE24 /* BCTLoginVC.m */; };
+		6E6EE7581F14BC1F0088EE24 /* BCTFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EE7571F14BC1F0088EE24 /* BCTFrame.m */; };
+		6E6EE75B1F14BC2D0088EE24 /* BCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EE75A1F14BC2D0088EE24 /* BCTUser.m */; };
+		6E6EE75E1F15C0210088EE24 /* BCTConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6EE75D1F15C0210088EE24 /* BCTConversation.m */; };
 		6ECD856F1F133EFC00BFC6CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD856E1F133EFC00BFC6CC /* main.m */; };
 		6ECD85721F133EFC00BFC6CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85711F133EFC00BFC6CC /* AppDelegate.m */; };
 		6ECD857A1F133EFC00BFC6CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD85791F133EFC00BFC6CC /* Assets.xcassets */; };
-		6ECD857D1F133EFC00BFC6CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */; };
 		6ECD85881F133EFC00BFC6CC /* BarChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85871F133EFC00BFC6CC /* BarChatTests.m */; };
 		6ECD85931F133EFC00BFC6CC /* BarChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85921F133EFC00BFC6CC /* BarChatUITests.m */; };
 		6ECD85A51F138AED00BFC6CC /* BCTNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD85A41F138AED00BFC6CC /* BCTNavigationVC.m */; };
@@ -72,12 +76,20 @@
 		6E348BB51F14653E00F66E44 /* BCTDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTDateManager.m; sourceTree = "<group>"; };
 		6E348BB71F1474C800F66E44 /* BCTChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTChatCell.h; sourceTree = "<group>"; };
 		6E348BB81F1474C800F66E44 /* BCTChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTChatCell.m; sourceTree = "<group>"; };
+		6E6EE7511F14A90D0088EE24 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6E6EE7531F14BA370088EE24 /* BCTLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTLoginVC.h; sourceTree = "<group>"; };
+		6E6EE7541F14BA370088EE24 /* BCTLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTLoginVC.m; sourceTree = "<group>"; };
+		6E6EE7561F14BC1F0088EE24 /* BCTFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTFrame.h; sourceTree = "<group>"; };
+		6E6EE7571F14BC1F0088EE24 /* BCTFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTFrame.m; sourceTree = "<group>"; };
+		6E6EE7591F14BC2D0088EE24 /* BCTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTUser.h; sourceTree = "<group>"; };
+		6E6EE75A1F14BC2D0088EE24 /* BCTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTUser.m; sourceTree = "<group>"; };
+		6E6EE75C1F15C0200088EE24 /* BCTConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTConversation.h; sourceTree = "<group>"; };
+		6E6EE75D1F15C0210088EE24 /* BCTConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTConversation.m; sourceTree = "<group>"; };
 		6ECD856A1F133EFC00BFC6CC /* BarChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECD856E1F133EFC00BFC6CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ECD85701F133EFC00BFC6CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6ECD85711F133EFC00BFC6CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6ECD85791F133EFC00BFC6CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6ECD857C1F133EFC00BFC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ECD857E1F133EFC00BFC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ECD85831F133EFC00BFC6CC /* BarChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECD85871F133EFC00BFC6CC /* BarChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChatTests.m; sourceTree = "<group>"; };
@@ -142,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6EE7521F14A90D0088EE24 /* SystemConfiguration.framework in Frameworks */,
 				6ECD85EB1F13DC1F00BFC6CC /* libsqlite3.0.tbd in Frameworks */,
 				3E26E4E47FB3C243D1B39F59 /* libPods-BarChat.a in Frameworks */,
 			);
@@ -200,7 +213,6 @@
 				6ECD85A01F13896B00BFC6CC /* I/O */,
 				6ECD85D51F13B8E800BFC6CC /* Widgets */,
 				6ECD85791F133EFC00BFC6CC /* Assets.xcassets */,
-				6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */,
 				6ECD857E1F133EFC00BFC6CC /* Info.plist */,
 				6ECD85E51F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png */,
 				6ECD856D1F133EFC00BFC6CC /* Supporting Files */,
@@ -264,6 +276,8 @@
 				6ECD85C01F138DED00BFC6CC /* BCTMomentsVC.m */,
 				6ECD85C21F138DFD00BFC6CC /* BCTSettingsVC.h */,
 				6ECD85C31F138DFD00BFC6CC /* BCTSettingsVC.m */,
+				6E6EE7531F14BA370088EE24 /* BCTLoginVC.h */,
+				6E6EE7541F14BA370088EE24 /* BCTLoginVC.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -302,6 +316,12 @@
 			children = (
 				6ECD85E71F13C4D600BFC6CC /* BCTMessage.h */,
 				6ECD85E81F13C4D600BFC6CC /* BCTMessage.m */,
+				6E6EE75C1F15C0200088EE24 /* BCTConversation.h */,
+				6E6EE75D1F15C0210088EE24 /* BCTConversation.m */,
+				6E6EE7591F14BC2D0088EE24 /* BCTUser.h */,
+				6E6EE75A1F14BC2D0088EE24 /* BCTUser.m */,
+				6E6EE7561F14BC1F0088EE24 /* BCTFrame.h */,
+				6E6EE7571F14BC1F0088EE24 /* BCTFrame.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -320,6 +340,7 @@
 		BA68E8138CA34F467DD23FEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E6EE7511F14A90D0088EE24 /* SystemConfiguration.framework */,
 				6ECD85EA1F13DC1F00BFC6CC /* libsqlite3.0.tbd */,
 				8C175D403BAA4D534BA1A60B /* libPods-BarChat.a */,
 				4BE283A2C4F759EFCD917B70 /* libPods-BarChatTests.a */,
@@ -459,7 +480,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ECD85E61F13BE4F00BFC6CC /* BCT_User_Icon_Demo@2x.png in Resources */,
-				6ECD857D1F133EFC00BFC6CC /* LaunchScreen.storyboard in Resources */,
 				6ECD857A1F133EFC00BFC6CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ECD85BE1F138DDE00BFC6CC /* BCTNewFriendVC.m in Sources */,
+				6E6EE7581F14BC1F0088EE24 /* BCTFrame.m in Sources */,
 				6ECD85E41F13BD9700BFC6CC /* BCTUserIcon.m in Sources */,
 				6ECD85AF1F138D7100BFC6CC /* BCTSocketManager.m in Sources */,
 				6ECD85C11F138DED00BFC6CC /* BCTMomentsVC.m in Sources */,
@@ -619,10 +640,13 @@
 				6ECD85C41F138DFD00BFC6CC /* BCTSettingsVC.m in Sources */,
 				6E348BB91F1474C800F66E44 /* BCTChatCell.m in Sources */,
 				6ECD85B21F138D7C00BFC6CC /* BCTDatabaseManager.m in Sources */,
+				6E6EE75B1F14BC2D0088EE24 /* BCTUser.m in Sources */,
 				6ECD85CE1F13B79300BFC6CC /* BCTFriendsVC.m in Sources */,
+				6E6EE75E1F15C0210088EE24 /* BCTConversation.m in Sources */,
 				6ECD85BB1F138DBD00BFC6CC /* BCTUserInfoVC.m in Sources */,
 				6ECD85A81F138B5100BFC6CC /* BCTMainVC.m in Sources */,
 				6ECD85CB1F13B78600BFC6CC /* BCTChatListVC.m in Sources */,
+				6E6EE7551F14BA370088EE24 /* BCTLoginVC.m in Sources */,
 				6ECD85A51F138AED00BFC6CC /* BCTNavigationVC.m in Sources */,
 				6ECD85D81F13B96800BFC6CC /* BCTChatListCell.m in Sources */,
 				6ECD85B81F138DA700BFC6CC /* BCTChatVC.m in Sources */,
@@ -667,17 +691,6 @@
 			targetProxy = 6ECD858F1F133EFC00BFC6CC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6ECD857B1F133EFC00BFC6CC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6ECD857C1F133EFC00BFC6CC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6ECD85951F133EFC00BFC6CC /* Debug */ = {
@@ -775,6 +788,7 @@
 			baseConfigurationReference = 3BBCF734BFF1B7B6740E8A43 /* Pods-BarChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
 				INFOPLIST_FILE = BarChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -788,6 +802,7 @@
 			baseConfigurationReference = BB6181C0782BF34BF6A2EEEC /* Pods-BarChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 9U5C8SLYC5;
 				INFOPLIST_FILE = BarChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

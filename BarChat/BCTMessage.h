@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef BCTMessageType
+
 typedef NS_ENUM(NSUInteger, BCTMessageType) {
     BCTMessageTypeText,
     BCTMessageTypeImage
 };
 
+#endif
+
 @interface BCTMessage : NSObject
 
-@property (nonatomic, assign, readonly) NSUInteger        ID;
+@property (nonatomic, assign, readonly) NSInteger        ID;
 
 @property (nonatomic, strong, readonly) NSString*         from;
 
@@ -27,12 +31,13 @@ typedef NS_ENUM(NSUInteger, BCTMessageType) {
 
 @property (nonatomic, assign, readonly) BCTMessageType    type;
 
-@property (nonatomic, strong, readonly) NSString*         displayName;
-
 @property (nonatomic, assign)           CGFloat           bubbleHeight;
 
 @property (nonatomic, assign)           BOOL              isAnimated;
 
 + (instancetype)messageWithJSON:(NSDictionary*)json;
 
++ (instancetype)messageWithID:(NSInteger)ID from:(NSString*)from to:(NSString*)to content:(NSString*)content date:(NSTimeInterval)date type:(BCTMessageType)type;
+
+- (void)configureID:(NSInteger)ID;
 @end

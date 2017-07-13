@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class BCTMessage;
 @interface BCTChatVC : UIViewController
 
 @property (nonatomic, strong) NSString* peerPhoneNumber;
+
+- (void)addMessage:(BCTMessage*)message;
+
+- (void)refresh;
 
 @end

@@ -9,7 +9,7 @@
 #import "BCTChatListCell.h"
 #import "BCTUserIcon.h"
 #import "BCTMacros.h"
-#import "BCTMessage.h"
+#import "BCTConversation.h"
 #import "BCTDateManager.h"
 
 @interface BCTChatListCell()
@@ -63,15 +63,11 @@
     return self;
 }
 
-- (void)setMessage:(BCTMessage *)message {
-    _message = message;
-    _nameLabel.text = message.displayName;
-    _contentLabel.text = message.content;
-    if (message.date == 0) {
-        message.date = [[BCTDateManager sharedManager] relativeTimeInterval];
-    }
-    
-    _dateLabel.text = [[BCTDateManager sharedManager] dateStringWithTimeIntervalSince1970:message.date];
+- (void)setConversation:(BCTConversation *)conversation {
+    _conversation = conversation;
+    _nameLabel.text = conversation.displayName;
+    _contentLabel.text = conversation.content;
+    _dateLabel.text = [[BCTDateManager sharedManager] dateStringWithTimeIntervalSince1970:conversation.date];
 }
 
 @end

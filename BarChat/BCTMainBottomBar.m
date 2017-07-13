@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) UILabel*      itemTitle;
 
+@property (nonatomic, assign) int           itemIndex;
+
 - (instancetype)initWithFrame:(CGRect)frame imageName:(NSString*)imageName title:(NSString*)title imageFrame:(CGRect)imageFrame;
 
 - (void)itemSelected:(BOOL)selected;
@@ -37,6 +39,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        _previousIndex = -1;
+        
         NSArray* buttonImageNames = @[@"chat", @"friends", @"discovery", @"me"];
         NSArray* buttonTitles = @[@"微信",@"通讯录",@"发现",@"我"];
         NSArray* buttonIconFrames = @[[NSValue valueWithCGRect:CGRectMake(0,0,kBCTNorm(26.f), kBCTNorm(22.f))],
@@ -47,7 +51,7 @@
         _barItems = [NSMutableArray array];
         for (int i = 0; i < 4; i++) {
             BCTMainBottomBarItem* item = [[BCTMainBottomBarItem alloc] initWithFrame:CGRectMake(i * frame.size.width * 0.25, 0, frame.size.width * 0.25, kBCTNorm(50.f)) imageName:buttonImageNames[i] title:buttonTitles[i] imageFrame:[buttonIconFrames[i] CGRectValue]];
-            
+            item.itemIndex = i;
             [self addSubview:item];
             [_barItems addObject:item];
         }
@@ -82,6 +86,8 @@
     if (self.BCTDelegate) {
         [self.BCTDelegate bottomBar:self didSelectSection:index];
     }
+    
+    self.previousIndex = item.itemIndex;
 }
 
 - (void)didMoveToSuperview {

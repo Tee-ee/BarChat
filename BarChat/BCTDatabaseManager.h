@@ -11,8 +11,14 @@
 @interface BCTDatabaseManager : NSObject
 
 - (BOOL)setupForPhoneNumber:(NSString*)phoneNumber;
-- (BOOL)openDatabase:(NSString*)name;
-- (BOOL)closeDatabase;
-- (BOOL)executeSQL:(NSString*)sql params:(NSArray*)params;
 
+- (BOOL)closeDatabase;
+
+- (BOOL)addFriendWithPhoneNumber:(NSString*)phoneNumber userName:(NSString*)userName gender:(NSString*)gender icon:(int)icon;
+
+- (BOOL)addMessageFrom:(NSString*)from to:(NSString*)to ID:(NSInteger)ID content:(NSString*)content date:(NSTimeInterval)date type:(NSUInteger)type toMe:(BOOL)toMe;
+
+- (NSArray*)queryConversations;
+
+- (NSArray*)queryMessagesWithPhoneNumber:(NSString*)peerPhoneNumber;
 @end

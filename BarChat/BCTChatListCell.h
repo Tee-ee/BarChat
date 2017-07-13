@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class BCTMessage;
+@class BCTConversation;
 
 @interface BCTChatListCell : UITableViewCell
 
-@property (nonatomic, weak) BCTMessage*   message;
+@property (nonatomic, weak) BCTConversation*   conversation;
+
+@property (nonatomic, strong) NSString*     peerPhoneNumber;
 
 @end

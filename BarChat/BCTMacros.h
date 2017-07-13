@@ -11,6 +11,10 @@
 
 #define kBCTDebugMode   YES
 
+#define KBCTFrameVersion    1
+
+#define kBCTFrameToken      @"0"
+
 #define kBCTScreenBounds [UIScreen mainScreen].bounds
 
 #define kBCTScreenWidth kBCTScreenBounds.size.width
@@ -26,5 +30,14 @@
 #define kBCTContentInsetTop [BCTVCManager sharedManager].navigationVC.navigationBar.frame.size.height
 
 #define kBCTPath(path)     [NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject],path]
+
+#define kBCTReconnectTimeInterval   10.f
+
+//#define kBCTHost    @"106.14.3.74"
+#define kBCTHost    @"192.168.1.147"
+
+#define kBCTPort    @6596
+
+#define kBCTCreatorPhoneNumber @"15689932457"
 
 #endif /* BCTMacros_h */

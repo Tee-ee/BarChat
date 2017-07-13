@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) NSString*   currentTitle;
 
+@property (nonatomic, assign) int       previousIndex;
+
 @end
 
 @protocol BCTMainBottomBarDelegate <NSObject>

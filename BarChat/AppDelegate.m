@@ -11,6 +11,7 @@
 #import "BCTMainVC.h"
 #import "BCTMacros.h"
 #import "BCTVCManager.h"
+#import "BCTIOManager.h"
 
 @interface AppDelegate ()
 
@@ -26,13 +27,18 @@
     BCTMainVC* mainVC = [[BCTMainVC alloc] init];
         
     BCTNavigationVC* navVC = [[BCTNavigationVC alloc] initWithRootViewController:mainVC];
-        
+    
     self.window.rootViewController = navVC;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     
     [BCTVCManager sharedManager].navigationVC = navVC;
     
+    [BCTVCManager sharedManager].mainVC = mainVC;
+    
     [self.window makeKeyAndVisible];
     
+    [BCTIOManager sharedManager].phoneNumber = @"18563816406";
     
     return YES;
 }

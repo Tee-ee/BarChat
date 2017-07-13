@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class BCTMessage;
+@class BCTChatVC;
 @interface BCTChatCell : UITableViewCell
+
+@property (nonatomic, weak) BCTChatVC*  fatherVC;
 
 @property (nonatomic, weak) BCTMessage* message;
 

@@ -9,16 +9,22 @@
 #import "BCTVCManager.h"
 #import "BCTNavigationVC.h"
 #import "BCTChatVC.h"
+#import "BCTChatListVC.h"
+#import "BCTMessage.h"
+#import "BCTMacros.h"
 
 @interface BCTVCManager()
 
 @property (nonatomic, strong) BCTChatVC* chatVC;
+
 
 @end
 
 @implementation BCTVCManager
 
 + (instancetype)sharedManager {
+
+
     static dispatch_once_t pred;
     static BCTVCManager* manager = nil;
     
@@ -40,6 +46,21 @@
 - (void)pushToChatVCWithPeerPhoneNumber:(NSString *)phoneNumber {
     [self.navigationVC pushViewController:self.chatVC animated:YES];
     self.chatVC.peerPhoneNumber = phoneNumber;
+}
+
+- (void)alertForInternetUnreachable {
+    
+}
+
+- (void)addMessage:(BCTMessage *)message {
+    if (![self.chatVC.peerPhoneNumber isEqualToString:message.from] && ![self.chatVC.peerPhoneNumber isEqualToString:message.to]) {
+        return;
+    }
+    [self.chatVC addMessage:message];
+}
+
+- (void)refreshVCs {
+    [self.chatListVC refresh];
 }
 
 @end

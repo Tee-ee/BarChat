@@ -14,4 +14,14 @@
 
 + (instancetype)sharedManager;
 
+- (void)sendMessage:(NSString*)content to:(NSString*)peerPhoneNumber;
+
+- (void)postFriendRequestTo:(NSString*)peerPhoneNumber;
+
+- (void)postIdentification;
+
+- (NSArray*)getConversations;
+
+- (NSArray*)getMessagesWithPhoneNumber:(NSString*)peerPhoneNumber;
+
 @end
