@@ -12,6 +12,7 @@
 #import "BCTMacros.h"
 #import "BCTChatVC.h"
 #import "BCTVCManager.h"
+#import "BCTIOManager.h"
 
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS
@@ -94,6 +95,9 @@
     if (message.bubbleHeight == 0) {
         height = self.messageBubble.titleLabel.frame.size.height + kBCTNorm(20.f);
         message.bubbleHeight = height;
+        if (message.ID != 0) {
+            [[BCTIOManager sharedManager] setBubbleHeight:height forMessage:message.ID friendPhoneNumber:self.fatherVC.peerPhoneNumber];
+        }
     }
     
     [self.messageBubble updateConstraints:^(MASConstraintMaker* make){

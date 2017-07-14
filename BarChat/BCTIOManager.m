@@ -57,7 +57,9 @@
 - (void)setPhoneNumber:(NSString *)phoneNumber {
     _phoneNumber = phoneNumber;
     [_dbManager setupForPhoneNumber:phoneNumber];
-    [self makeFriendWithCreator];
+    if (![[[NSUserDefaults standardUserDefaults] valueForKey:kBCTHasAddCreatorKey] boolValue]) {
+        [self makeFriendWithCreator];
+    }
     [self connect];
 }
 
@@ -71,32 +73,36 @@
 #pragma mark BCTSocketManagerDelegate
 
 - (void)socketManager:(BCTSocketManager *)manager didConnectToHost:(NSString *)host {
-    [self postIdentification];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self postIdentification];
+    });
 }
 
 - (void)socketManager:(BCTSocketManager *)manager cannotConnectToHost:(NSString *)host {
 }
 
 - (void)socketManager:(BCTSocketManager *)manager didReceivedData:(NSData *)data {
-    NSArray* frames = [BCTFrame framesWithData:data];
-    for (BCTFrame* frame in frames) {
-        switch (frame.type) {
-            case BCTFrameTypeIdentification:
-                [self fetchUnreadMessage:frame];
-                break;
-                
-            case BCTFrameTypePeerMessage:
-                [self receivePeerMessage:frame];
-                break;
-                
-            case BCTFrameTypeMessageConfigure:
-                [self configureMessage:frame];
-                break;
-                
-            default:
-                break;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSArray* frames = [BCTFrame framesWithData:data];
+        for (BCTFrame* frame in frames) {
+            switch (frame.type) {
+                case BCTFrameTypeIdentification:
+                    [self fetchUnreadMessage:frame];
+                    break;
+                    
+                case BCTFrameTypePeerMessage:
+                    [self receivePeerMessage:frame];
+                    break;
+                    
+                case BCTFrameTypeMessageConfigure:
+                    [self configureMessage:frame];
+                    break;
+                    
+                default:
+                    break;
+            }
         }
-    }
+    });
 }
 
 #pragma mark output data
@@ -156,6 +162,8 @@
 
 - (void)makeFriendWithCreator {
     [self makeFriendWith:[BCTUser userWithUserName:@"Creator" phoneNumber:@"15689932457" gender:@"m" photo:0]];
+    [[NSUserDefaults standardUserDefaults] setValue:@true forKey:kBCTHasAddCreatorKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)makeFriendWith:(BCTUser*)user {
@@ -169,6 +177,12 @@
 
 - (NSArray*)getMessagesWithPhoneNumber:(NSString *)peerPhoneNumber {
     return [self.dbManager queryMessagesWithPhoneNumber:peerPhoneNumber];
+}
+
+- (void)setBubbleHeight:(double)height
+             forMessage:(NSInteger)ID
+      friendPhoneNumber:(NSString *)phoneNumber {
+    [self.dbManager setBubbleHeight:height forMessage:ID friendPhoneNumber:phoneNumber];
 }
 
 @end

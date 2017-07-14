@@ -8,7 +8,7 @@
 
 #import "BCTFrame.h"
 #import "BCTMacros.h"
-
+#import <string.h>
 
 @implementation BCTFrame
 
@@ -19,14 +19,36 @@
     if (kBCTDebugMode) {
         NSLog(@"[NOTICE] receive json sequence: %@", jsonString);
     }
+    
+    const char* jsonUFT8String = [jsonString UTF8String];
     NSMutableArray* frames = [NSMutableArray array];
-    for (int i = 0; i < jsonString.length; i++) {
+    for (int i = 0; i < strlen(jsonUFT8String); i++) {
         int stringLength = 1;
-        while ([jsonString characterAtIndex:i + stringLength] != '#') {
+        while (jsonUFT8String[i + stringLength] != '#') {
             stringLength ++;
         }
-        NSInteger jsonLength = [[jsonString substringWithRange:NSMakeRange(i, stringLength)] integerValue];
-        BCTFrame* frame = [BCTFrame frameWithJSONString:[jsonString substringWithRange:NSMakeRange(i + 1 + stringLength, jsonLength)]];
+        
+        char* lengthUFT8String = (char*)malloc(stringLength+1 * sizeof(char));
+        
+        for (int j = 0; j < stringLength; j++) {
+            lengthUFT8String[j] = jsonUFT8String[j+i];
+        }
+        
+        lengthUFT8String[stringLength] = '\0';
+
+        NSInteger jsonLength = [[NSString stringWithUTF8String:lengthUFT8String] integerValue];
+        free(lengthUFT8String);
+        
+        char* jsonUTF8SubString = malloc(jsonLength + 1 * sizeof(char));
+        
+        for (int j = 0; j < jsonLength; j++) {
+            jsonUTF8SubString[j] = jsonUFT8String[j+i+1+stringLength];
+        }
+        jsonUTF8SubString[jsonLength] = '\0';
+        BCTFrame* frame = [BCTFrame frameWithJSONString:[NSString stringWithUTF8String:jsonUTF8SubString]];
+        
+        free(jsonUTF8SubString);
+        
         [frames addObject:frame];
         
         i += stringLength + jsonLength;

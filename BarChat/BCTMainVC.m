@@ -71,6 +71,9 @@
     for (UIViewController* VC in self.childrenVCs) {
         [VC viewWillAppear:animated];
     }
+    
+    BCTChatListVC* chatListVC = [self.childrenVCs objectAtIndex:0];
+    [chatListVC becomeFirstResponder];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSString* peerPhoneNumber;
 
+@property (nonatomic, strong) NSString* displayName;
+
 - (void)addMessage:(BCTMessage*)message;
 
 - (void)refresh;

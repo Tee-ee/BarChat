@@ -28,7 +28,7 @@
 
 + (instancetype)sharedManager;
 
-- (void)pushToChatVCWithPeerPhoneNumber:(NSString*)phoneNumber;
+- (void)pushToChatVCWithPeerPhoneNumber:(NSString*)phoneNumber displayName:(NSString*)display;
 
 - (void)alertForInternetUnreachable;
 

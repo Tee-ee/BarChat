@@ -23,7 +23,7 @@
 
 #define kBCTNorm(x) x * kBCTScreenWidth / 320.f
 
-#define kBCTLog() NSLog(@"%s : %d", __func__, __LINE__)
+#define kBCTLog() NSLog(@"[DEBUG] %s : %d", __func__, __LINE__)
 
 #define kBCTMainBottomBarHeight kBCTNorm(50.f)
 
@@ -33,11 +33,15 @@
 
 #define kBCTReconnectTimeInterval   10.f
 
-//#define kBCTHost    @"106.14.3.74"
-#define kBCTHost    @"192.168.1.147"
+#define kBCTHost    @"106.14.3.74"
+//#define kBCTHost    @"192.168.1.147"
 
 #define kBCTPort    @6596
 
 #define kBCTCreatorPhoneNumber @"15689932457"
+
+#define kBCTInputViewMaxHeight  155.f
+
+#define kBCTHasAddCreatorKey   @"_has_add_creator_key_"
 
 #endif /* BCTMacros_h */

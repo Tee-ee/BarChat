@@ -13,13 +13,15 @@
 #import "BCTVCManager.h"
 #import "BCTIOManager.h"
 
-@interface BCTChatVC () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface BCTChatVC () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 
 @property (nonatomic, strong) UITableView*      chatTableView;
 
 @property (nonatomic, strong) UIToolbar*        inputBar;
 
-@property (nonatomic, strong) UITextField*      inputField;
+@property (nonatomic, strong) UITextView*      inputView;
+
+@property (nonatomic, strong) UITextView*       tempInputView;
 
 @property (nonatomic, strong) NSMutableArray<BCTMessage*>* messages;
 
@@ -35,6 +37,7 @@
 {
     NSString*   _reuseIdentifier;
     CGRect      _inputBarOriginalFrame;
+    CGFloat     _inputBarYWhenKeyboardShow;
 }
 - (instancetype)init {
     if (self = [super init]) {
@@ -43,15 +46,25 @@
         _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _chatTableView.delegate = self;
         _chatTableView.dataSource = self;
+        _chatTableView.allowsSelection = NO;
         _reuseIdentifier = @"BCTChatCell";
         [_chatTableView registerClass:[BCTChatCell class] forCellReuseIdentifier:_reuseIdentifier];
-        _inputBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kBCTScreenHeight - kBCTNorm(50.f), kBCTScreenWidth, kBCTNorm(50.f))];
+        _inputBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kBCTScreenHeight - kBCTNorm(50.f), kBCTScreenWidth, kBCTNorm(80.f))];
+        CALayer* hairline = [CALayer layer];
+        hairline.frame = CGRectMake(0, -0.5f, kBCTScreenWidth, 0.5f);
+        hairline.backgroundColor = [[UIColor colorWithWhite:0.85 alpha:1.f] CGColor];
+        [_inputBar.layer addSublayer:hairline];
+        
         _inputBarOriginalFrame = _inputBar.frame;
-        _inputField = [[UITextField alloc] initWithFrame:CGRectMake(kBCTNorm(40.f), kBCTNorm(kBCTNorm(7.5f)), kBCTNorm(200.f), kBCTNorm(35.f))];
-        _inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        _inputField.borderStyle = UITextBorderStyleRoundedRect;
-        _inputField.backgroundColor = [UIColor whiteColor];
-        _inputField.delegate = self;
+        _inputView = [[UITextView alloc] initWithFrame:CGRectMake(kBCTNorm(40.f), kBCTNorm(7.5f), kBCTNorm(200.f), kBCTNorm(37.5f))];
+        _tempInputView = [[UITextView alloc] initWithFrame:_inputView.frame];
+        _inputView.layer.cornerRadius = kBCTNorm(5.f);
+        _inputView.backgroundColor = [UIColor whiteColor];
+        _inputView.delegate = self;
+        _inputView.font = [UIFont systemFontOfSize:kBCTNorm(18.f)];
+        _inputView.textAlignment = NSTextAlignmentLeft;
+        _inputView.layer.borderWidth = 0.5f;
+        _inputView.layer.borderColor = [[UIColor colorWithWhite:0.8f alpha:1.f] CGColor];
         _messages = [NSMutableArray array];
         _messagesToDisplay = [NSMutableArray array];
         _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
@@ -66,7 +79,7 @@
     [self.view addSubview:self.chatTableView];
     [self.view addSubview:self.inputBar];
     [self.view addGestureRecognizer:self.tapRecognizer];
-    [self.inputBar addSubview:self.inputField];
+    [self.inputBar addSubview:self.inputView];
     
     self.messageTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f repeats:YES block:^(NSTimer* timer){
         if (self.messagesToDisplay.count != 0) {
@@ -76,6 +89,7 @@
             [self.messagesToDisplay removeObjectAtIndex:0];
         }
     }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,8 +97,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f), 0);
-    
+    if (self.chatTableView.contentInset.bottom != kBCTNorm(20.f)) {
+        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(70.f), 0);
+    }
+
+    self.navigationItem.title = self.displayName;
     [self refresh];
 }
 
@@ -92,11 +109,12 @@
     [super viewDidAppear:animated];
     
     self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f), 0);
+    self.inputView.contentInset = UIEdgeInsetsZero;
 //    [self fakeSomeMessages];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
+    [self.inputView resignFirstResponder];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -124,9 +142,8 @@
     }
     
     BCTMessage* message = [self.messages objectAtIndex:indexPath.row];
-    cell.message = message;
     cell.fatherVC = self;
-    
+    cell.message = message;
     return cell;
 }
 
@@ -136,19 +153,48 @@
     return MAX(kBCTNorm(50.f), bubbleFinalHeight);
 }
 
-#pragma mark UITextFieldDelegate
+#pragma mark UITextViewDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString* content = textField.text;
-    
-    if (content.length == 0) {
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    NSString* content = textView.text;
+    if ((content.length + text.length - range.length) > 80) {
+        NSLog(@"[NOTICE] text length too long");
         return NO;
     }
+    
+    if ([text containsString:@"\n"]) {
+        if (content.length != 0) {
+            [[BCTIOManager sharedManager] sendMessage:content to:self.peerPhoneNumber];
+            textView.text = @"";
+            [self textViewDidChange:textView];
+            [textView resignFirstResponder];
+        }
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+
+    NSDictionary *dictAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:kBCTNorm(18.f)]};
+    textView.attributedText = [[NSAttributedString alloc] initWithString:textView.text attributes:dictAttr];
+    CGSize size = [textView sizeThatFits:CGSizeMake(kBCTNorm(200.f), FLT_MAX)];
+    CGFloat finalHeight = MIN(size.height,kBCTNorm(kBCTInputViewMaxHeight));
+    CGFloat heightDelta = finalHeight - textView.frame.size.height;
+    CGRect inputBarFinalFrame = CGRectMake(self.inputBar.frame.origin.x, self.inputBar.frame.origin.y - heightDelta, self.inputBar.frame.size.width, self.inputBar.frame.size.height + heightDelta);
+    CGRect chatTableViewFinalFrame = CGRectMake(self.chatTableView.frame.origin.x, self.chatTableView.frame.origin.y - heightDelta, self.chatTableView.frame.size.width, self.chatTableView.frame.size.height);
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        self.inputBar.frame = inputBarFinalFrame;
+        textView.frame = CGRectMake(kBCTNorm(40.f), kBCTNorm(7.5f), kBCTNorm(200.f), finalHeight);
+        self.chatTableView.frame = chatTableViewFinalFrame;
+    }];
+    if (size.height > kBCTNorm(kBCTInputViewMaxHeight)) {
+        textView.scrollEnabled = YES;
+    }
     else {
-        [[BCTIOManager sharedManager] sendMessage:textField.text to:self.peerPhoneNumber];
-        textField.text = @"";
-        [textField resignFirstResponder];
-        return YES;
+        textView.scrollEnabled = NO;
     }
 }
 
@@ -160,24 +206,28 @@
     CGFloat keyboardHeight = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
     
     double duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    _inputBarYWhenKeyboardShow = _inputBarOriginalFrame.origin.y - keyboardHeight;
+    CGRect finalFrame = CGRectMake(_inputBarOriginalFrame.origin.x, _inputBarYWhenKeyboardShow, _inputBarOriginalFrame.size.width, _inputBarOriginalFrame.size.height);
+    UIEdgeInsets finalInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f) + keyboardHeight, 0);
+    self.chatTableView.contentInset = finalInset;
     
-    CGRect finalFrame = CGRectMake(self.inputBar.frame.origin.x, self.inputBar.frame.origin.y - keyboardHeight, self.inputBar.frame.size.width, self.inputBar.frame.size.height);
-    
+    self.inputBar.clipsToBounds = YES;
     [UIView animateWithDuration:duration animations:^{
         self.inputBar.frame = finalFrame;
-        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f) + keyboardHeight, 0);
     } completion:^(BOOL finished){
+        self.inputBar.clipsToBounds = NO;
         [self scrollToBottom];
     }];
 }
 
 - (void)keyboardWillHide:(id)sender {
     
-    [UIView animateWithDuration:0.5f animations:^{
-        
+    self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f), 0);
+    self.inputBar.clipsToBounds = YES;
+    [UIView animateWithDuration:0.2f animations:^{
         self.inputBar.frame = _inputBarOriginalFrame;
-        self.chatTableView.contentInset = UIEdgeInsetsMake(self.chatTableView.contentInset.top, 0, kBCTNorm(20.f), 0);
-        
+    } completion:^(BOOL finished){
+        self.inputBar.clipsToBounds = NO;
     }];
 }
 #pragma mark custom
@@ -193,13 +243,13 @@
     [self.chatTableView layoutIfNeeded];
     [self.chatTableView reloadData];
     if (self.messages.count > 0) {
-        [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count -1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count -1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
 
 }
 
 - (void)tap:(UITapGestureRecognizer*)recognizer {
-    [self.inputField resignFirstResponder];
+    [self.inputView resignFirstResponder];
 }
 
 - (void)fakeSomeMessages {

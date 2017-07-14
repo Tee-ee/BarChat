@@ -39,7 +39,6 @@
     self.tableView.tableFooterView = [UIView new];
     [self.tableView registerClass:[BCTChatListCell class] forCellReuseIdentifier:_reuseIdentifier];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, kBCTNorm(10.f), 0, 0);
-    [self refresh];
 //    [self fakeSomeData];
     
 }
@@ -92,7 +91,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     BCTConversation* conversation = [self.conversations objectAtIndex:indexPath.row];
     NSString* peerPhoneNumber = conversation.phoneNumber;
-    [[BCTVCManager sharedManager] pushToChatVCWithPeerPhoneNumber:peerPhoneNumber];
+    [[BCTVCManager sharedManager] pushToChatVCWithPeerPhoneNumber:peerPhoneNumber displayName:conversation.displayName];
 }
 
 #pragma mark customMethods

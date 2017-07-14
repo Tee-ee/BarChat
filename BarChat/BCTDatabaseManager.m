@@ -150,7 +150,7 @@
 }
 
 - (BOOL)addFriendWithPhoneNumber:(NSString*)phoneNumber userName:(NSString*)userName gender:(NSString*)gender icon:(int)icon {
-    if (![self createTableWithName:[NSString stringWithFormat:@"m%@", phoneNumber] columns:@{@"id":@"int primary key", @"content":@"varchar(255)", @"fromPhoneNumber":@"char(11)", @"toPhoneNumber":@"char(11)", @"date":@"double", @"type":@"tinyint"}]) {
+    if (![self createTableWithName:[NSString stringWithFormat:@"m%@", phoneNumber] columns:@{@"id":@"int primary key", @"content":@"varchar(255)", @"fromPhoneNumber":@"char(11)", @"toPhoneNumber":@"char(11)", @"date":@"double", @"type":@"tinyint", @"bubbleHeight":@"double"}]) {
         NSLog(@"[FAILED] create message history with :%@", phoneNumber);
         return NO;
     }
@@ -203,10 +203,10 @@
 - (NSArray*)queryMessagesWithPhoneNumber:(NSString*)peerPhoneNumber {
     __block NSMutableArray* result = [NSMutableArray array];
     
-    NSString* sql = [NSString stringWithFormat:@"select * from m%@", peerPhoneNumber];
+    NSString* sql = [NSString stringWithFormat:@"select fromPhoneNumber,id,content,type,toPhoneNumber,date,bubbleHeight from m%@", peerPhoneNumber];
     
     [self queryDatabaseWithSQL:sql block:^(sqlite3_stmt* statement){
-        NSDictionary* message = @{@"from":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)], @"ID":@(sqlite3_column_int(statement, 1)), @"content":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)], @"type":@(sqlite3_column_int(statement, 3)), @"to":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 4)], @"date":@(sqlite3_column_double(statement, 5))};
+        NSDictionary* message = @{@"from":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)], @"ID":@(sqlite3_column_int(statement, 1)), @"content":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 2)], @"type":@(sqlite3_column_int(statement, 3)), @"to":[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 4)], @"date":@(sqlite3_column_double(statement, 5)), @"bubbleHeight":@(sqlite3_column_double(statement, 6))};
         [result addObject:message];
     }];
     
@@ -233,6 +233,17 @@
     sqlite3_finalize(statement);
     
     NSLog(@"[SUCCEED] query sql: %@", sql);
+    
+}
+
+- (void)setBubbleHeight:(double)height forMessage:(NSInteger)ID friendPhoneNumber:(NSString*)phoneNumber {
+    NSString* sql = [NSString stringWithFormat:@"update m%@ set bubbleHeight = %f where id = %ld", phoneNumber, height, ID];
+    if(![self executeSQL:sql]) {
+        NSLog(@"[FAILED] change bubble height for ID: %ld", ID);
+        return;
+    }
+    
+    NSLog(@"[SUCCEED] change bubble height for ID: %ld", ID);
     
 }
 @end

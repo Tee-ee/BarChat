@@ -21,4 +21,6 @@
 - (NSArray*)queryConversations;
 
 - (NSArray*)queryMessagesWithPhoneNumber:(NSString*)peerPhoneNumber;
+
+- (void)setBubbleHeight:(double)height forMessage:(NSInteger)ID friendPhoneNumber:(NSString*)phoneNumber;
 @end

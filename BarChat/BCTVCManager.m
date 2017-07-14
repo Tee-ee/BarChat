@@ -43,9 +43,10 @@
     return self;
 }
 
-- (void)pushToChatVCWithPeerPhoneNumber:(NSString *)phoneNumber {
-    [self.navigationVC pushViewController:self.chatVC animated:YES];
+- (void)pushToChatVCWithPeerPhoneNumber:(NSString *)phoneNumber displayName:(NSString *)displayName {
+    self.chatVC.displayName = displayName;
     self.chatVC.peerPhoneNumber = phoneNumber;
+    [self.navigationVC pushViewController:self.chatVC animated:YES];
 }
 
 - (void)alertForInternetUnreachable {
